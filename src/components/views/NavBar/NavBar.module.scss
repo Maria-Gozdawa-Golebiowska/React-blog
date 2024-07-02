@@ -1,4 +1,8 @@
 .nav {
     justify-content: space-between;
+    display: flex;
 }
 
+.nav-link {
+    margin-left: auto;
+}
