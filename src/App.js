@@ -6,11 +6,14 @@ import About from "./components/pages/About/About";
 import Edit from "./components/pages/Edit/Edit";
 import SinglePages from "./components/pages/SinglePages/SinglePages.js";
 import NotFound from "./components/pages/NotFound/NotFound";
+import Header from "./components/views/Header/Header";
+import Footer from "./components/views/Footer/Footer";
 
 function App() {
   return (
     <main>
         <Container>
+          <Header/>
             <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/post/add" element={<Add/>} />
@@ -19,6 +22,7 @@ function App() {
                 <Route path="/post/:id" element={<SinglePages/>} />
                 <Route path="*" element = {<NotFound/>} />
             </Routes>
+            <Footer/>
         </Container>
     </main>
   );
