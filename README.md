@@ -1,1 +1,1 @@
-https://replit.com/@mgozdawagolebio/React-blog
+https://70fb6fe2-6688-4ac6-a932-8fed8837fff8-00-mwtme31ako0m.riker.replit.dev/
