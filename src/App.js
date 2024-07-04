@@ -19,7 +19,7 @@ function App() {
                 <Route path="/post/add" element={<Add/>} />
                 <Route path="/about" element={<About/>} />
                 <Route path="/post/edit/:id" element={<Edit/>} />
-                <Route path="/post/:id" element={<SinglePages/>} />
+                <Route path="/post/:postId" element={<SinglePages/>} />
                 <Route path="*" element = {<NotFound/>} />
             </Routes>
             <Footer/>

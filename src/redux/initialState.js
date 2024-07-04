@@ -19,7 +19,7 @@ const initialState = {
       },
       {
         id: '3',
-        title: 'Article title III',
+        title: 'How to start exploring world',
         shortDescirption: 'Short description of the article..',
         content: 'Main content of the article',
         publishedDate: '06-02-2022',
