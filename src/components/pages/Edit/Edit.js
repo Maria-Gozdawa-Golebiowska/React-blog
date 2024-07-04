@@ -1,10 +1,15 @@
-//import styles from './Edit.module.scss'
+import { Col, Row } from "react-bootstrap";
+import EditPostForm from "../../features/EditPostForm/EditPostForm"
+
 
 const Edit = () => {
     return (
-        <div>
-            <h1>Edit</h1>
-        </div>
-    )
+    <Row className='justify-content-center'>
+    <Col>
+        <h1>Edit Post</h1>
+        <EditPostForm/>
+    </Col>
+</Row>
+)
 }
 export default Edit;
