@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { getPostById } from '../../../redux/postsRedux.js';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import RemovePost from '../../features/RemovePost/RemovePost.js';
+import dateToStr from "../../../utils/dateToStr.js";
 
 
 
@@ -30,8 +31,9 @@ const SinglePages = (props) => {
                 <Card className='border-0'>
                     <Card.Body>
                                 <Card.Text className='mb-1'><strong>Author:</strong>{postData.author}</Card.Text>
-                                <Card.Text className='mb-2'><strong>Published:</strong>{postData.publishedDate}</Card.Text>
-                                <Card.Text className='mb-3'>{postData.content}</Card.Text>
+                                <Card.Text className='mb-2'><strong>Published:</strong>{dateToStr(postData.publishedDate)}</Card.Text>
+                                <Card.Text className='mb-3'><strong>Short description:</strong>{postData.shortDescription}</Card.Text>
+                                <Card.Text className='mb-3' dangerouslySetInnerHTML={{ __html: postData.content }}></Card.Text>
                     </Card.Body>
                 </Card>
             </Col>
