@@ -3,6 +3,7 @@ import { Navigate, useNavigate, useParams } from "react-router-dom"
 import { editPost, getPostById } from "../../../redux/postsRedux";
 import PostForm from "../PostForm/PostForm";
 
+
 const EditPostForm = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const EditPostForm = () => {
             actionText='EditPost'
             title={postData.title}
             publishedDate={postData.publishedDate}
+            category={postData.category}
             shortDescription={postData.shortDescription}
             content={postData.content}
             author={postData.author}

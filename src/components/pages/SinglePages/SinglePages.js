@@ -33,6 +33,7 @@ const SinglePages = (props) => {
                                 <Card.Text className='mb-1'><strong>Author:</strong>{postData.author}</Card.Text>
                                 <Card.Text className='mb-2'><strong>Published:</strong>{dateToStr(postData.publishedDate)}</Card.Text>
                                 <Card.Text className='mb-3'><strong>Short description:</strong>{postData.shortDescription}</Card.Text>
+                                <Card.Text className='mb-2'><strong>Category:</strong>{postData.category}</Card.Text>
                                 <Card.Text className='mb-3' dangerouslySetInnerHTML={{ __html: postData.content }}></Card.Text>
                     </Card.Body>
                 </Card>

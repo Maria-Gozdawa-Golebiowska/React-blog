@@ -10,6 +10,7 @@ const NavBar = () => {
         <Container className={styles.nav}>
           <NavbarBrand as={NavLink} to="/">Blog.app</NavbarBrand>
           <Nav className={styles['nav-links']}>
+          <Nav.Link as={NavLink} to='/categories'>Categories</Nav.Link>
             <Nav.Link as={NavLink} to='/about'>About</Nav.Link>
             <Nav.Link as={NavLink} to='/'>Home</Nav.Link>
           </Nav>

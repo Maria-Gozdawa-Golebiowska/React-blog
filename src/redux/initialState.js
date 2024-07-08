@@ -6,6 +6,7 @@ const initialState = {
       shortDescription: 'Short description of the article..',
       content: 'Main content of the article',
       publishedDate: new Date('2022-02-03'),
+      category: 'Sport',
       author: 'John Doe'
     },
     {
@@ -13,7 +14,8 @@ const initialState = {
       title: 'Amazing adventure begins...',
       shortDescription: 'Short description of the article..',
       content: 'Main content of the article',
-      publishedDate: new Date('2022-02-05'),
+      publishedDate: new Date('2024-02-05'),
+      category: 'News',
       author: 'John Doe'
     },
     {
@@ -21,10 +23,16 @@ const initialState = {
       title: 'How to start exploring world',
       shortDescription: 'Short description of the article..',
       content: 'Main content of the article',
-      publishedDate: new Date('2022-02-06'),
+      publishedDate: new Date('2024-02-06'),
+      category: 'Movies',
       author: 'John Doe'
     },
   ],
-}
+  categories: [
+    'Sport',
+    'News',
+    'Movies'
+  ]
+};
 
 export default initialState;

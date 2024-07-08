@@ -27,6 +27,7 @@ const Home = (props) => {
                                 <Card.Title className='mb-3'>{post.title}</Card.Title>
                                 <Card.Text className='mb-1'><strong>Author:</strong>{post.author}</Card.Text>
                                 <Card.Text className='mb-2'><strong>Published:</strong> {dateToStr(new Date(post.publishedDate))}</Card.Text>
+                                <Card.Text className='mb-2'><strong>Category:</strong>{post.category}</Card.Text>
                                 <Card.Text className='mb-3'>{post.shortDescription}</Card.Text>
                                 <Link to={`/post/${post.id}`}>
                                     <Button>Read more</Button>

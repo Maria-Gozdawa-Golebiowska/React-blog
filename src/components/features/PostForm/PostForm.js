@@ -6,26 +6,33 @@ import 'react-quill/dist/quill.snow.css';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.module.css';
 import { useForm } from "react-hook-form"; 
-
+import { useSelector } from "react-redux";
+import { getAllCategories } from "../../../redux/categoriesRedux";
 
 const PostForm = ({action, actionText, ...props}) => {
 
+    const categories = useSelector(getAllCategories)
+    
     const { register, handleSubmit: validate, formState: { errors } } = useForm();
     const [title, setTitle] = useState(props.title || '');
     const [shortDescription, setShortDescription] = useState(props.shortDescription || '');
     const [content, setContent] = useState(props.content || '');
     const [publishedDate, setPublishedDate] = useState(props.publishedDate || '');
     const [author, setAuthor] = useState(props.author || '');
+    const [category, setCategories] = useState(props.category || '');
+
 
     const [contentError, setContentError] = useState(false);
     const [dateError, setDateError] = useState(false);
+    const [categoriesError, setCategoriesError] = useState(false);
 
     
     const handleSubmit = () => {
         setContentError(!content)
         setDateError(!publishedDate)
-        if(content && publishedDate) {
-          action({ title, author, publishedDate, shortDescription, content });
+        setCategoriesError(!category)
+        if(content && publishedDate && category) {
+            action(({title, shortDescription, content, publishedDate, category, author}));
         }
       };
 
@@ -71,6 +78,25 @@ const PostForm = ({action, actionText, ...props}) => {
                             onChange={e => setShortDescription(e.target.value)}/>
                             {errors.title && <small className="d-block form-text text-danger mt-2">Description text is too small (min is 4)</small>}
                         </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="categories">
+                        <Form.Label>Categories:</Form.Label>
+                        <Form.Select aria-label="Default select example"
+                            {...register('categories', {required: true})}
+                            as="textarea" 
+                            value={category} 
+                            onChange={e => setCategories(e.target.value)}
+                        >
+
+                        <option>Select article category</option>
+                        {categories.map((category, index) => (
+                            <option key={index} value={category}>
+                                {category}
+                            </option>
+                        ))}
+                        </Form.Select>
+                            {categoriesError && (<small className="d-block form-text text-danger mt-4">This field can't be empty</small>)}
+                    </Form.Group>
 
                         <Form.Group className="mb-3" controlId="content">
                             <Form.Label>Main Content:</Form.Label>
